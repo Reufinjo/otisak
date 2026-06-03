@@ -1,0 +1,44 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "slike"
+public_folder: "/slike"
+
+collections:
+  - name: "stranice"
+    label: "Uredi Sajt"
+    files:
+      - file: "sadrzaj/pocetna.md"
+        label: "1. Početna (Hero sekcija)"
+        name: "pocetna"
+        fields:
+          - {label: "Glavni Naslov", name: "hero_naslov", widget: "string"}
+          - {label: "Podnaslov / Opis", name: "hero_opis", widget: "text"}
+          - {label: "Tekst na dugmetu", name: "hero_dugme", widget: "string"}
+
+      - file: "sadrzaj/o_nama.md"
+        label: "2. Rubrika O Nama"
+        name: "o_nama_stranica"
+        fields:
+          - {label: "Naslov sekcije", name: "naslov", widget: "string"}
+          - {label: "Glavni tekst o firmi", name: "tekst", widget: "markdown"}
+
+      - file: "sadrzaj/kontakt.md"
+        label: "3. Kontakt Podaci"
+        name: "kontakt_podaci"
+        fields:
+          - {label: "Adresa firme", name: "adresa", widget: "string"}
+          - {label: "Telefon", name: "telefon", widget: "string"}
+          - {label: "E-mail", name: "email", widget: "string"}
+          - {label: "Radno vrijeme", name: "radno_vrijeme", widget: "string"}
+
+  - name: "proizvodi"
+    label: "4. Upravljanje Proizvodima"
+    folder: "sadrzaj/proizvodi"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Naziv proizvoda", name: "title", widget: "string"}
+      - {label: "Slika proizvoda", name: "slika", widget: "image"}
+      - {label: "Opis proizvoda", name: "opis", widget: "text"}

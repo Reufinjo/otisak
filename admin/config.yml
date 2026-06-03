@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: Reufinjo/otisak
+  name: name: git-gateway
   branch: main
 
 media_folder: "slike"
